@@ -15,25 +15,35 @@ def reverse_integer(n: int):
 
 
 def first_non_repeating_char(text: str):
-        print(first_non_repeating_char("aabbcdd"))
-        pass
-
-
-
-
-
-
+    dict = {}
+    for char in text:
+        dict[char] = text.count(char)
+        
+    for key,value in dict.items():
+        if value == 1:
+            return key
+    
 def two_sum(nums: list, target: int):
     for num in nums:
-        print(num)
-        for i in range(len(nums)):
-            pass
-    
-print(two_sum([2, 7, 11, 15], 9))
+        if nums[0] + num == target:
+            return True
+    else:
+        return False
+
 
 # def is_palindrome(text: str) -> bool:
-#     pass
-
+#     list_of_texts = text.lower().replace(":","").strip(",").split()
+#     print(list_of_texts)
+#     reversed_list = list_of_texts[::-1]
+#     reversed_string = " ".join(reversed_list)
+    
+#     if text == reversed_string:
+#         return True
+#     else:
+#         return False
+    
+#     print(reversed_string)
+# print(is_palindrome("A man, a plan, a canal: Panama"))
 
 # def max_consecutive_sum(nums: list, k: int) -> int:
 #     pass
